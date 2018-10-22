@@ -15,10 +15,13 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import configuration.Configuration;
+
 public class LectorXML {
 
-	public static void main(String[] args) {
+	private Configuration getConfiguration() {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		Configuration conf = new Configuration();
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
 			Document doc = builder.parse(new File("cv_config.xml"));
@@ -31,19 +34,16 @@ public class LectorXML {
 					specifications_file_path = doc.getElementsByTagName("specifications_file_path").item(0).getTextContent(),
 					version = doc.getElementsByTagName("version").item(0).getTextContent();
 
-			boolean emp;
-			if(doc.getElementsByTagName("employee_version").item(0).getTextContent().equalsIgnoreCase("true")) 
-				emp = true;
-			else
-				emp = false;
-		System.out.println(car_conf_file_name);
-
+			boolean emp = doc.getElementsByTagName("employee_version").item(0).getTextContent().equalsIgnoreCase("true");
 			
 			
+			conf = new Configuration(car_conf_path, car_conf_file_name, 
+					specifications_file_path, emp_list, emp_password, version, emp);
 
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
+		return conf;
 
 	}
 
