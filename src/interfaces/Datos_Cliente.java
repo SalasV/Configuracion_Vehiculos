@@ -21,11 +21,11 @@ import java.awt.event.ActionEvent;
 public class Datos_Cliente extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField campo_Nombre;
+	private JTextField campo_PrimerApellido;
+	private JTextField campo_Correo;
+	private JTextField campo_Direccion;
+	private JTextField campo_SegundoApellido;
 
 	/**
 	 * Launch the application.
@@ -84,7 +84,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_lblNombre.gridy = 1;
 		contentPane.add(lblNombre, gbc_lblNombre);
 		
-		textField = new JTextField();
+		campo_Nombre = new JTextField();
 		GridBagConstraints gbc_textField = new GridBagConstraints();
 		gbc_textField.anchor = GridBagConstraints.NORTH;
 		gbc_textField.fill = GridBagConstraints.HORIZONTAL;
@@ -92,8 +92,8 @@ public class Datos_Cliente extends JFrame {
 		gbc_textField.gridwidth = 3;
 		gbc_textField.gridx = 3;
 		gbc_textField.gridy = 1;
-		contentPane.add(textField, gbc_textField);
-		textField.setColumns(10);
+		contentPane.add(campo_Nombre, gbc_textField);
+		campo_Nombre.setColumns(10);
 		
 		JLabel lblPrimerApellido = new JLabel("Primer Apellido *");
 		GridBagConstraints gbc_lblPrimerApellido = new GridBagConstraints();
@@ -103,8 +103,8 @@ public class Datos_Cliente extends JFrame {
 		gbc_lblPrimerApellido.gridy = 2;
 		contentPane.add(lblPrimerApellido, gbc_lblPrimerApellido);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		campo_PrimerApellido = new JTextField();
+		campo_PrimerApellido.setColumns(10);
 		GridBagConstraints gbc_textField_1 = new GridBagConstraints();
 		gbc_textField_1.anchor = GridBagConstraints.NORTH;
 		gbc_textField_1.fill = GridBagConstraints.HORIZONTAL;
@@ -112,7 +112,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_textField_1.gridwidth = 3;
 		gbc_textField_1.gridx = 3;
 		gbc_textField_1.gridy = 2;
-		contentPane.add(textField_1, gbc_textField_1);
+		contentPane.add(campo_PrimerApellido, gbc_textField_1);
 		
 		JLabel lblSegundoApellido = new JLabel("Segundo Apellido *");
 		GridBagConstraints gbc_lblSegundoApellido = new GridBagConstraints();
@@ -122,8 +122,8 @@ public class Datos_Cliente extends JFrame {
 		gbc_lblSegundoApellido.gridy = 3;
 		contentPane.add(lblSegundoApellido, gbc_lblSegundoApellido);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
+		campo_SegundoApellido = new JTextField();
+		campo_SegundoApellido.setColumns(10);
 		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
 		gbc_textField_4.anchor = GridBagConstraints.NORTH;
 		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
@@ -131,7 +131,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_textField_4.gridwidth = 3;
 		gbc_textField_4.gridx = 3;
 		gbc_textField_4.gridy = 3;
-		contentPane.add(textField_4, gbc_textField_4);
+		contentPane.add(campo_SegundoApellido, gbc_textField_4);
 		
 		JLabel lblDireccin = new JLabel("Direcci\u00F3n *");
 		GridBagConstraints gbc_lblDireccin = new GridBagConstraints();
@@ -141,8 +141,8 @@ public class Datos_Cliente extends JFrame {
 		gbc_lblDireccin.gridy = 4;
 		contentPane.add(lblDireccin, gbc_lblDireccin);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
+		campo_Direccion = new JTextField();
+		campo_Direccion.setColumns(10);
 		GridBagConstraints gbc_textField_2 = new GridBagConstraints();
 		gbc_textField_2.anchor = GridBagConstraints.NORTH;
 		gbc_textField_2.fill = GridBagConstraints.HORIZONTAL;
@@ -150,7 +150,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_textField_2.gridwidth = 3;
 		gbc_textField_2.gridx = 3;
 		gbc_textField_2.gridy = 4;
-		contentPane.add(textField_2, gbc_textField_2);
+		contentPane.add(campo_Direccion, gbc_textField_2);
 		
 		JLabel lblCorreoElectrnico = new JLabel("Correo electr\u00F3nico *");
 		GridBagConstraints gbc_lblCorreoElectrnico = new GridBagConstraints();
@@ -160,8 +160,8 @@ public class Datos_Cliente extends JFrame {
 		gbc_lblCorreoElectrnico.gridy = 5;
 		contentPane.add(lblCorreoElectrnico, gbc_lblCorreoElectrnico);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
+		campo_Correo = new JTextField();
+		campo_Correo.setColumns(10);
 		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
 		gbc_textField_3.anchor = GridBagConstraints.NORTH;
 		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
@@ -169,7 +169,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_textField_3.gridwidth = 3;
 		gbc_textField_3.gridx = 3;
 		gbc_textField_3.gridy = 5;
-		contentPane.add(textField_3, gbc_textField_3);
+		contentPane.add(campo_Correo, gbc_textField_3);
 		
 		JLabel lblGnero = new JLabel("G\u00E9nero");
 		GridBagConstraints gbc_lblGnero = new GridBagConstraints();
@@ -262,11 +262,11 @@ public class Datos_Cliente extends JFrame {
 		JButton btnSiguiente = new JButton("SIGUIENTE");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!textField.getText().isEmpty() 
-						|| !textField_1.getText().isEmpty() 
-						|| !textField_2.getText().isEmpty() 
-						|| !textField_3.getText().isEmpty() 
-						|| !textField_4.getText().isEmpty()) {
+				if(!campo_Nombre.getText().isEmpty() 
+						|| !campo_PrimerApellido.getText().isEmpty() 
+						|| !campo_Correo.getText().isEmpty() 
+						|| !campo_Direccion.getText().isEmpty() 
+						|| !campo_SegundoApellido.getText().isEmpty()) {
 				}
 			}
 		});

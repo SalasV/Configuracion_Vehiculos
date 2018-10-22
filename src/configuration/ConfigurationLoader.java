@@ -2,9 +2,10 @@ package configuration;
 
 import java.io.File;
 
-public class ConfigurationLoader {
+public class ConfigurationLoader extends Configuration{
 	private File fichero_coches;
 	private String ruta;
+	
 	private static ConfigurationLoader miconfigurador;
 
 	public static ConfigurationLoader getConfigurador(String ruta) {// Comprueba que no hemos creado la clase

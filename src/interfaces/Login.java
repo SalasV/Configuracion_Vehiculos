@@ -97,11 +97,11 @@ public class Login extends JFrame {
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				comprovacion();
+				comprobacion();
 			
 			}
 
-			private void comprovacion() {
+			private void comprobacion() {
 				String user=textField.getText();
 				Configuration confi=new Configuration();
 				String[] personas=confi.getEmployee_list();
@@ -109,6 +109,10 @@ public class Login extends JFrame {
 				
 				for (int i = 0; i < personas.length; i++) {
 					if(personas[i].equals(user) && pass[i].equals(passwordField.getPassword())) {
+						if (confi.isEmployee_version()) {
+							
+						}
+						
 						Datos_Cliente.main(null);
 					}else {
 						 JOptionPane.showMessageDialog(null, "El usuario introducido no es valido");
