@@ -2,24 +2,29 @@ package LectorXML;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.concurrent.SynchronousQueue;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import configuration.Configuration;
 
 public class LectorXML {
 
-	private Configuration getConfiguration() {
+	public void getCarConfiguration() {
+		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		Configuration conf = new Configuration();
+		try {
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document doc = builder.parse(new File("cars_config.xml"));
+		} catch (ParserConfigurationException | SAXException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public Configuration getConfiguration() {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 		Configuration conf = new Configuration();
 		try {

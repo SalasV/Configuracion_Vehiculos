@@ -2,7 +2,7 @@
 	<car_configuration_path>wdad</car_configuration_path>
 	<car_configuration_file_name>awdaw</car_configuration_file_name>
 	<employee_list>Jaime,Victor,Marc</employee_list>  <!--lista de nombres de empleados separados por , -->
-	<employee_password></employee_password>  <!--lista de contraseñas de empleados separados por , -->
+	<employee_password>password,password,password</employee_password>  <!--lista de contraseñas de empleados separados por , -->
 	<specifications_file_path></specifications_file_path>
 	<version></version>
 	<employee_version>true</employee_version>

@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import configuration.Configuration;
+import configuration.ConfigurationLoader;
 import interfaces.Datos_Cliente;
 
 import java.awt.GridLayout;
@@ -96,28 +97,35 @@ public class Login extends JFrame {
 		JButton btnEntrar = new JButton("ENTRAR");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
-				comprovacion();
-			
+
+				comprobacion();
+
 			}
 
-			private void comprovacion() {
-				String user=textField.getText();
-				Configuration confi=new Configuration();
-				String[] personas=confi.getEmployee_list();
-				String[] pass=confi.getEmployee_password();
-				
+			private void comprobacion() {
+				String user = textField.getText();
+				Configuration confi = ConfigurationLoader.getConfiguration();
+				String[] personas = confi.getEmployee_list();
+				String[] pass = confi.getEmployee_password();
+				boolean correcto=false, empVersion = false;
+
 				for (int i = 0; i < personas.length; i++) {
-					if(personas[i].equals(user) && pass[i].equals(passwordField.getPassword())) {
-						Datos_Cliente.main(null);
-					}else {
-						 JOptionPane.showMessageDialog(null, "El usuario introducido no es valido");
+					if (personas[i].equals(user) && pass[i].equals(new String(passwordField.getPassword()))) {
+						if (confi.isEmployee_version()) {
+							empVersion = true;
+						}
+						correcto=true;
+						Datos_Cliente.main(user);
+						setVisible(false);
 					}
 				}
+				if (!correcto) {
+					JOptionPane.showMessageDialog(null, "El usuario o la contraseña introducida no es válida");
+				}
+				
 			}
 		});
-		
-		
+
 		GridBagConstraints gbc_btnEntrar = new GridBagConstraints();
 		gbc_btnEntrar.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btnEntrar.insets = new Insets(0, 0, 0, 5);
