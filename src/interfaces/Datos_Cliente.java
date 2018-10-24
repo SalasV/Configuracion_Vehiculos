@@ -7,10 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.toedter.calendar.JDateChooser;
+
 import configuration.Configuration;
 import configuration.ConfigurationLoader;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
@@ -247,7 +250,7 @@ public class Datos_Cliente extends JFrame {
 			}
 		});
 		
-		//JDateChooser dateChooser = new JDateChooser();
+		JDateChooser dateChooser = new JDateChooser();
 		GridBagConstraints gbc_dateChooser = new GridBagConstraints();
 		gbc_dateChooser.anchor = GridBagConstraints.SOUTH;
 		gbc_dateChooser.fill = GridBagConstraints.HORIZONTAL;
@@ -255,7 +258,7 @@ public class Datos_Cliente extends JFrame {
 		gbc_dateChooser.gridwidth = 3;
 		gbc_dateChooser.gridx = 2;
 		gbc_dateChooser.gridy = 7;
-		//contentPane.add(dateChooser, gbc_dateChooser);
+		contentPane.add(dateChooser, gbc_dateChooser);
 		GridBagConstraints gbc_btnGuardar = new GridBagConstraints();
 		gbc_btnGuardar.anchor = GridBagConstraints.EAST;
 		gbc_btnGuardar.fill = GridBagConstraints.BOTH;
@@ -272,8 +275,7 @@ public class Datos_Cliente extends JFrame {
 						|| campo_Correo.getText().isEmpty() 
 						|| campo_Direccion.getText().isEmpty() 
 						|| campo_SegundoApellido.getText().isEmpty()) {
-					
-					System.out.println("incorrecto");
+					JOptionPane.showMessageDialog(null, "Introduce todos los campos obligatorios");
 				} else {
 					ModeloCoche.main(userName);
 					setVisible(false);

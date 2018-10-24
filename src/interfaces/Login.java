@@ -111,9 +111,14 @@ public class Login extends JFrame {
 
 				for (int i = 0; i < personas.length; i++) {
 					if (personas[i].equals(user) && pass[i].equals(new String(passwordField.getPassword()))) {
+						
 						if (confi.isEmployee_version()) {
 							empVersion = true;
+							JOptionPane.showMessageDialog(null, "Has entrado en la versión de empleado");
+						}else {
+							JOptionPane.showMessageDialog(null, "No has entrado en la versión de empleado");
 						}
+						
 						correcto=true;
 						Datos_Cliente.main(user);
 						setVisible(false);
